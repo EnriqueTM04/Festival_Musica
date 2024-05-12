@@ -39,7 +39,11 @@
 
     <section class="sobre-festival">
         <div class="imagen">
-            <img src="src/img/imagen_dj.jpg" alt="Sobre Festival">
+            <picture>
+                <source srcset="build/img/imagen_dj.avif" type="image/avif">
+                <source srcset="build/img/imagen_dj.webp" type="image/webp">
+                <img width="300" height="200" loading="lazy" src="build/img/imagen_dj.jpg" alt="Sobre Festival">
+            </picture>
         </div>
         <div class="contenido-festival">
             <h2>Techno & EDM Festival</h2>
