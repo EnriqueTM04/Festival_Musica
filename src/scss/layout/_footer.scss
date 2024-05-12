@@ -1,0 +1,20 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.footer {
+    background-color: v.$rosa;
+    display: flex;
+    padding: 3rem;
+
+    &-texto {
+        @include m.contenedor;
+        display: flex;
+        justify-content: space-between;
+
+        p {
+            margin: 0;
+            color: v.$blanco;
+            font-weight: 700;
+        }
+    }
+}

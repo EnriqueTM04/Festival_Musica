@@ -1,0 +1,89 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenedor-boletos {
+    background-color: v.$verde;
+
+    h3 {
+        color: v.$blanco;
+    }
+
+    .boletos {
+        @include m.contenedor;
+        
+        @include m.tablet {
+            @include m.grid(2);
+        }
+    }
+}
+
+.pase {
+
+    //para que tarde en efectuar el efecto, el ultimo parametro es el tipo de efecto
+    //transition: transform .3s ease-in-out;
+    transition: transform .3s cubic-bezier(.68,-0.55,.27,1.55);
+    &:hover {   //Aumentar tamanio mientras esta sobre el elmento
+        transform: scale(1.1);
+    }
+
+    &-nombre {  //para no repetir .pase .pase-nombre en la compilacion de css
+        font-size: 3.6rem;
+        font-weight: 900;
+        text-align: center;
+        color: v.$blanco;
+    }
+
+    &-header,
+    &-footer {
+        padding: .5rem;
+
+        p {
+            text-align: center;
+            color: v.$blanco;
+            margin: 0;
+        }
+    }
+
+    &-header {
+        background-color: v.$rosa;
+
+        p {
+            text-transform: uppercase;
+            font-size: 2.2rem;
+            padding: 1rem 0;
+        }
+    }
+
+    &-body {
+        background-color: v.$blanco;
+
+        ul {
+            @include m.resetear-lista;
+            
+            li {
+                padding: 2rem;
+                border-bottom: 1px solid #E1E1E1
+            }
+        }
+    }
+
+    &-footer {
+        background-color: v.$blanco;
+        padding: 3rem;
+
+        p {
+            font-size: 2.8rem;
+            font-weight: 900;
+            background-color: v.$morado;
+            padding: 1rem 0;
+            border-radius: 1rem;
+
+            cursor: pointer;
+
+            transition: background-color .6s ease-in-out;
+            &:hover {
+                background-color: darken(v.$morado, 20%);
+            }
+        }
+    }
+}
